@@ -132,19 +132,5 @@ for perm in permutList2(y):
     if (a + (b - c) * d - e) * f == 75:
         print a, b, c, d, e, f
 
-# def permss(A,k,n):
-#     if k == n:
-#         return A[0:n]
-#     else:
-#         for i in xrange(k,n):
-#             A[i],A[k] = A[k],A[i]
-#             permss(A,k+1,n)
-#             A[i],A[k] = A[k],A[i]
-#     return A
-# for perm in permss(y, 0 , 6):
-#     a, b, c, d, e, f = perm
-#     print perm
-#     if (a + (b - c) * d - e) * f == 75:
-#         print a, b, c, d, e, f
-# print permss(y, 0 , 6)
+
 
