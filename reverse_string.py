@@ -10,8 +10,13 @@ def reverse_string1(string):
   str_len = len(string)
   i = str_len
   result = ''
-  while i>0:
+  while i > 0:
     result = result + string[i-1]
     i -=1
   return result
-print reverse_string1("Madam, I'm Adam")
+
+def reverse_simple(string):
+  return string[::-1]
+
+print reverse_string("Madam, I'm Adam")
+print reverse_simple("Madam, I'm Adam")
