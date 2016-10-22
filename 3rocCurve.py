@@ -33,15 +33,10 @@ def roc_curve(probabilities, labels):
 
         fprs.append(fpr)
         tprs.append(tpr)
-
     return tprs, fprs, thresholds.tolist()
 
 if __name__ == '__main__':
-    from sklearn.datasets import make_classification
-    from sklearn.linear_model import LogisticRegression
     import matplotlib.pyplot as plt
-    import pandas as pd
-    from sklearn.cross_validation import train_test_split
 
     # y1 = [2,2,1,2,1,2,1,2]
     y1 = [1,1,0,1,0,1,0,1]
