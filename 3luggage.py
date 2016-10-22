@@ -22,4 +22,5 @@ def luggage1(weights):
     result = [x for container in container_list for x in container]
     return ','.join([str(x) for x in result])
 
-print luggage1('2,1,1,1,30,5,6,39')
+if __name__ == '__main__':
+    print luggage1('2,1,1,1,30,5,6,39')
