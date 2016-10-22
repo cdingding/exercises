@@ -29,3 +29,4 @@ print letters
 letters.reverse()
 print letters
 print ''.join([x[0].upper() for x in phrase.split()]) # list comprehension
+
