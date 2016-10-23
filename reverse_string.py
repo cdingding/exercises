@@ -35,7 +35,3 @@ def reverse1(string):
 print reverse_string("Madam, I'm Adam")
 print reverse_simple("Madam, I'm Adam")
 print reverse_str('ding')
-
-a = list('abcd')
-b = list('efgh')
-a += b[-1]
