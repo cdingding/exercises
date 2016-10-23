@@ -18,5 +18,24 @@ def reverse_string1(string):
 def reverse_simple(string):
   return string[::-1]
 
+def reverse_str(string):
+    rev_list=[]
+    new_list=list(string)
+    while new_list:
+        rev_list += new_list[-1]
+        new_list.pop()
+    return ''.join(rev_list)
+
+def reverse1(string):
+    lst = list(string)
+    new = []
+    i = len(lst)
+    while i > 0:
+
 print reverse_string("Madam, I'm Adam")
 print reverse_simple("Madam, I'm Adam")
+print reverse_str('ding')
+
+a = list('abcd')
+b = list('efgh')
+a += b[-1]
