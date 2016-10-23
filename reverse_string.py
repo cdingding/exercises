@@ -28,9 +28,8 @@ def reverse_str(string):
 
 def reverse1(string):
     lst = list(string)
-    new = []
-    i = len(lst)-1
-    while i > 0:
+    i = len(lst)/2
+    while i >= 0:
         lst[i], lst[-i-1] = lst[-i-1], lst[i]
         i -= 1
     return ''.join(lst)
@@ -38,3 +37,4 @@ print reverse_string("Madam, I'm Adam")
 print reverse_simple("Madam, I'm Adam")
 print reverse_str('ding')
 print reverse1('ding')
+print reverse1("Madam, I'm Adam")
