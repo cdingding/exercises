@@ -15,7 +15,7 @@ print item_reduce
 
 phrase = 'I am Changsong Ding'
 letters = map(lambda x: x[0].upper(), phrase.split())
-print letters
+print 'letters:', letters
 
 red = reduce(lambda x, y: x + y, letters)
 print 'red: ',red
@@ -28,4 +28,5 @@ letters.reverse() # inplace change, does not return, or return None
 print letters
 letters.reverse()
 print ''.join([x[0].upper() for x in phrase.split()]) # list comprehension
+
 
