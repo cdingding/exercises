@@ -14,9 +14,7 @@ def get_max_profit(arg):
     return 'running with %s' % max_profit
 
 def get_max_profit2(stock_prices_yesterday):
-
     max_profit = 0
-
     # go through every price (with its index as the time)
     for earlier_time, earlier_price in enumerate(stock_prices_yesterday):
 
@@ -78,6 +76,6 @@ def get_max_profit4(stock_prices_yesterday):
 # remember: debugging is half the battle!
 stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
 print get_max_profit4(stock_prices_yesterday)
-get_max_profit2(stock_prices_yesterday)
+print get_max_profit2(stock_prices_yesterday)
 # returns 6 (buying for $5 and selling for $11))
 
