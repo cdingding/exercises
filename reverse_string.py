@@ -29,6 +29,7 @@ def reverse_str(string):
 def reverse1(string):
     lst = list(string)
     i = len(lst)/2
+    print i, len(lst)
     while i >= 0:
         lst[i], lst[-i-1] = lst[-i-1], lst[i]
         i -= 1
