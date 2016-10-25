@@ -1,5 +1,4 @@
 def reverse_string(string):
-  str_len = len(string)
   result = ''
   for index, item in enumerate(string):
     result = result + string[-(index+1)]
