@@ -23,4 +23,5 @@ def luggage1(weights):
     return ','.join([str(x) for x in result])
 
 if __name__ == '__main__':
-    print luggage1('2,1,1,1,30,5,6,39')
+    print luggage1('2,1,1,1,30,5,6,39,40')
+
