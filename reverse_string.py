@@ -2,6 +2,19 @@ class ReverseString(object):
     def __init__(self,st):
         self.st = st
     def reverse(self):
+        st = list(self.st)
+        l = len(st)
+        start = 0
+        while start < l:
+            st[start], st[l-1] = st[l-1], st[start]
+            start += 1
+            l -= 1
+        return ''.join(st)
+
+class ReverseString1(object):
+    def __init__(self,st):
+        self.st = st
+    def reverse(self):
         st =list(self.st)
         l = len(st)
         start = 0
@@ -11,12 +24,24 @@ class ReverseString(object):
             l -= 1
         return st
 
+class ReverseString2(object):
+    def reverse(self,st):
+        st =list(st)
+        l = len(st)
+        start = 0
+        while start < l:
+            st[start], st[l-1] = st[l-1], st[start]
+            start += 1
+            l -= 1
+        return st
+
+
+
 def reverse_string(string):
   result = ''
   for index, item in enumerate(string):
     result = result + string[-(index+1)]
   return result
-print reverse_string('Ding')
 
 def reverse_string1(string):
   str_len = len(string)
@@ -48,8 +73,8 @@ def reverse1(string):
     return ''.join(lst)
 
 print ReverseString('Ding').reverse()
-print reverse_string("Madam, I'm Adam")
-print reverse_simple("Madam, I'm Adam")
-print reverse_str('ding')
-print reverse1('ding')
-print reverse1("Madam, I'm Adam")
+# print reverse_string("Madam, I'm Adam")
+# print reverse_simple("Madam, I'm Adam")
+# print reverse_str('ding')
+# print reverse1('ding')
+# print reverse1("Madam, I'm Adam")
