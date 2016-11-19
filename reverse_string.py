@@ -13,18 +13,17 @@ class ReverseString(object):
 
 class ReverseString1(object):
     def __init__(self,st):
-        self.st = st
+        self.st = list(st)
     def reverse(self):
-        st =list(self.st)
-        l = len(st)
+        l = len(self.st)
         start = 0
         while start < l:
-            st[start], st[l-1] = st[l-1], st[start]
+            self.st[start], self.st[l-1] = self.st[l-1], self.st[start]
             start += 1
             l -= 1
-        return st
+        return ''.join(self.st)
 
-class ReverseString2(object):
+class ReverseString2(object): # no __init__():
     def reverse(self,st):
         st =list(st)
         l = len(st)
@@ -33,9 +32,18 @@ class ReverseString2(object):
             st[start], st[l-1] = st[l-1], st[start]
             start += 1
             l -= 1
-        return st
+        return ''.join(st)
 
-
+class ReverseString3: #ignore (object) part still works
+    def reverse(self,st):
+        st =list(st)
+        l = len(st)
+        start = 0
+        while start < l:
+            st[start], st[l-1] = st[l-1], st[start]
+            start += 1
+            l -= 1
+        return ''.join(st)
 
 def reverse_string(string):
   result = ''
@@ -49,19 +57,27 @@ def reverse_string1(string):
   result = ''
   while i > 0:
     result = result + string[i-1]
-    i -=1
+    i -= 1
   return result
 
 def reverse_simple(string):
   return string[::-1]
 
 def reverse_str(string):
-    rev_list=[]
+    newStr = ''
     new_list=list(string)
     while new_list:
-        rev_list += new_list[-1]
+        newStr += new_list[-1]
         new_list.pop()
-    return ''.join(rev_list)
+    return newStr
+
+def reverse_str1(string):
+    newString = ''
+    new_list = list(string)
+    while new_list:
+        newString += new_list[-1]
+        new_list.pop()
+    return newString
 
 def reverse1(string):
     lst = list(string)
@@ -72,9 +88,12 @@ def reverse1(string):
         i -= 1
     return ''.join(lst)
 
-print ReverseString('Ding').reverse()
-# print reverse_string("Madam, I'm Adam")
-# print reverse_simple("Madam, I'm Adam")
-# print reverse_str('ding')
-# print reverse1('ding')
-# print reverse1("Madam, I'm Adam")
+if __name__ == '__main__':
+    print ReverseString1('Ding').reverse()
+    print ReverseString3().reverse('ding')
+    print reverse_string("Madam, I'm Adam")
+    print reverse_string1("Madam, I'm Adam")
+    # print reverse_simple("Madam, I'm Adam")
+    print reverse_str1('ding')
+    # print reverse1('ding')
+    # print reverse1("Madam, I'm Adam")
