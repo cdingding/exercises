@@ -1,4 +1,4 @@
-class ReverseString(object):
+class ReverseString(object): #swap
     def __init__(self,st):
         self.st = st
     def reverse(self):
@@ -52,12 +52,11 @@ def reverse_string(string):
   return result
 
 def reverse_string1(string):
-  str_len = len(string)
-  i = str_len
+  l = len(string)
   result = ''
-  while i > 0:
-    result = result + string[i-1]
-    i -= 1
+  while l > 0:
+    result = result + string[l-1]
+    l -= 1
   return result
 
 def reverse_simple(string):
@@ -88,6 +87,34 @@ def reverse1(string):
         i -= 1
     return ''.join(lst)
 
+def reverseStack(st):
+    newList = []
+    l = len(st)
+    for i, item in enumerate(st):
+        newList.append(st[-(i+1)])
+    return ''.join(newList)
+
+def reverseStack1(st):
+    newList = list(st)
+    result = []
+    l = len(st)
+    i = 0
+    while i < l:
+        result.insert(0, newList[i])
+        i += 1
+    return ''.join(result)
+
+def reverseStack2(st):
+    newList = list(st)
+    result = []
+    l = len(st)
+    i = 0
+    while i < l:
+        result.insert(0, newList[0])
+        del newList[0]
+        i += 1
+    return ''.join(result)
+
 if __name__ == '__main__':
     print ReverseString1('Ding').reverse()
     print ReverseString3().reverse('ding')
@@ -97,3 +124,4 @@ if __name__ == '__main__':
     print reverse_str1('ding')
     # print reverse1('ding')
     # print reverse1("Madam, I'm Adam")
+    print reverseStack2("Madam, I'm Adam")
