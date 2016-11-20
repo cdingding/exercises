@@ -14,18 +14,23 @@ def is_prime(n):
 
 def prime_generator():
     n = 100
-    while n<1000:
+    while n<200:
         if is_prime(n):
             yield(n)
         n += 1
 
+def isPrime(n):
+    if n < 2: return False
+    for item in xrange(2,int(sqrt(n))+1):
+        if n % item == 0:
+            return False
+    return True
+
 print len([x for x in range(10, 100) if is_prime(x)])
 print len([x for x in range(100, 1000) if is_prime(x)])
 print len([x for x in range(1000, 10000) if is_prime(x)])
-print len([x for x in range(10000, 100000) if is_prime(x)])
+print len([x for x in range(10000, 100000) if isPrime(x)])
 
-
-#
 if __name__ == '__main__':
     x = []
     for value in prime_generator():

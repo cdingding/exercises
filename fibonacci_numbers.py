@@ -1,3 +1,6 @@
+def fib(n):
+    if n < 2: return 1
+    return f(n-1) + f(n-2)
 
 def fibo_gen(lst, start, end):
     # lst with two above numbers
@@ -5,16 +8,15 @@ def fibo_gen(lst, start, end):
     if start == 1 and len(lst) == 1: yield 1
     else: yield sum(lst[-2:])
 
-def fibo_gen1(limit):
+def fibo_gen1(limit): #by dynamic programming, closest fib number to a certain number
     # fibo sequence: 1, 1, 2, 3, 5, 8 ...
     result = [1,1]
     if limit < 1: yield 0
     if limit == 1: yield result[0]
     while result[-1] <= limit:
         result.append(sum(result[-2:]))
-        # result.pop(0)
-    yield result[:-1]
-
+        result.pop(0)
+    yield result
 
 def f(n): #fibonacci generator
     if n < 0: return 0
@@ -23,18 +25,21 @@ def f(n): #fibonacci generator
     result.append(f(n - 1) + f(n - 2))
     return f(n-1) + f(n-2)
 
-
 def fact(n): #factorial generator
     if n < 0 : return 'n must be positive!'
     if n == 0: return 1
     return n*fact(n-1)
 
 if __name__ == '__main__':
+    print map(fib, [x for x in range(11)])
     print f(10)
     print [f(i) for i in range(11)]
     print map(f,range(11))
     print fact(5)
-    for x in fibo_gen1(100):
+    print '---------'
+    for x in fibo_gen1(10000):
         print x
-
+    print '---------'
+    print [x for x in fibo_gen1(10000)]
+    # print fibo_gen1(100)
 

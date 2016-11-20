@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def roc_curve(probabilities, labels):
     '''
     INPUT: numpy array, numpy array
