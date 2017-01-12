@@ -1,5 +1,5 @@
 
-def luggage1(weights):
+def luggage_ordering(weights):
     containerWeight = 40
     lug_list = [int(x) for x in weights.split(',')]
     container_list = []
@@ -9,8 +9,8 @@ def luggage1(weights):
         count += lug
         if count >= containerWeight:
             container_list.append(container)
-            container = []
-            count = 0
+            container = []                   # empty container
+            count = 0                        # count reset
         container.append(lug)
     container_list.append(container)
     container_list.reverse()
@@ -18,5 +18,4 @@ def luggage1(weights):
     return ' '.join([str(x) for x in result])
 
 if __name__ == '__main__':
-    print luggage1('2,1,1,1,30,5,6,39,40')
-
+    print luggage_ordering('2,1,1,1,30,5,6,39,40')
