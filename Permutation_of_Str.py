@@ -32,6 +32,29 @@ def product(s):
     d = ((x,y,z) for x in s for y in s for z in s)
     return d.next()
 
+def perm1(s):
+    #Permutations with and without replacement
+    s = 'din'
+    L = [[x,y,z] for x in s for y in s for z in s]
+    L1 = [x+y+z for x in s for y in s for z in s]
+    L2 = [x+y+z for x in s for y in s for z in s if x!=y and y!=z and x!=z]
+    # L1 = [''.join(x) for x in perms_with_replcement]
+    # L2 = [''.join(x) for x in perms_no_replacement]
+    print L, '\n'
+    print L1, '\n'
+    print L2, '\n'
+
+def perm2(s):
+    # Permutations by loops
+    result = []
+    for x in s:
+        for y in s:
+            for z in s:
+                if x != y and y != z and x != z:
+                    result.append(x + y + z)
+    print result
+
+
 if __name__ == "__main__":
     strS = "Din"
     result1 = []
@@ -52,3 +75,4 @@ if __name__ == "__main__":
     # print 'generator as iterator: ---'
     # print [x for x in d.next()] #does not work
     print [''.join([x, y, z, w]) for x in s for y in s for z in s for w in s]
+
