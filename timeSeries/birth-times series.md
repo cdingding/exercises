@@ -12,16 +12,6 @@ import matplotlib.pyplot as plt
 
 
 ```python
-ls
-```
-
-    README.md                 [34mimages[m[m/                   pair.ipynb
-    birth-times series.ipynb  individual.md             pair.md
-    [34mdata[m[m/                     iterate.dat
-
-
-
-```python
 df = pd.read_csv('data/birth.txt')
 df.head()
 ```
@@ -463,7 +453,7 @@ df_month['num_births'].plot(kind = 'line')
 
 
 
-![png](output_16_1.png)
+![png](output_15_1.png)
 
 
 
@@ -479,7 +469,7 @@ df_month['num_births'].plot(kind = 'area')
 
 
 
-![png](output_17_1.png)
+![png](output_16_1.png)
 
 
 
@@ -495,7 +485,7 @@ df_month['num_births'].plot(kind = 'bar')
 
 
 
-![png](output_18_1.png)
+![png](output_17_1.png)
 
 
 
@@ -504,7 +494,7 @@ ax = plt.scatter(x = df_month.index, y =df_month.num_births)
 ```
 
 
-![png](output_19_0.png)
+![png](output_18_0.png)
 
 
 
@@ -632,7 +622,7 @@ plt.show()
 ```
 
 
-![png](output_21_0.png)
+![png](output_20_0.png)
 
 
 
@@ -647,7 +637,7 @@ plt.show()
 ```
 
 
-![png](output_22_0.png)
+![png](output_21_0.png)
 
 
 
@@ -877,7 +867,7 @@ plt.show()
 ```
 
 
-![png](output_31_0.png)
+![png](output_30_0.png)
 
 
 Plot the data for 2006-2010, is the seasonal pattern more apparent?
@@ -892,7 +882,7 @@ plt.show()
 ```
 
 
-![png](output_33_0.png)
+![png](output_32_0.png)
 
 
 Use df.resample('Q-NOV') to get quarterly means that follow the seasons of the year (spring, summer, fall, winter).
@@ -961,7 +951,7 @@ plt.legend();
 ```
 
 
-![png](output_38_0.png)
+![png](output_37_0.png)
 
 
 
@@ -1142,7 +1132,7 @@ pd.Series(model.fittedvalues, index = df.index).plot();
 ```
 
 
-![png](output_47_0.png)
+![png](output_46_0.png)
 
 
 
@@ -1155,7 +1145,7 @@ model.fittedvalues.plot(); # still indexed, same as bs
 ```
 
 
-![png](output_48_0.png)
+![png](output_47_0.png)
 
 
 
@@ -1264,7 +1254,7 @@ model.fittedvalues.plot()
 
 
 
-![png](output_51_1.png)
+![png](output_50_1.png)
 
 
 
@@ -1346,7 +1336,7 @@ plt.legend();
 ```
 
 
-![png](output_53_0.png)
+![png](output_52_0.png)
 
 
 
@@ -1431,7 +1421,7 @@ plt.legend();
 ```
 
 
-![png](output_55_0.png)
+![png](output_54_0.png)
 
 
 
@@ -1641,7 +1631,7 @@ plt.legend();
 ```
 
 
-![png](output_61_0.png)
+![png](output_60_0.png)
 
 
 
@@ -1765,7 +1755,7 @@ df.plot(x = 'time', y = 'resid',figsize = (12,8), kind = 'scatter');
 ```
 
 
-![png](output_65_0.png)
+![png](output_64_0.png)
 
 
 
