@@ -12,6 +12,7 @@ def luggage_ordering(weights):
             container = []                   # empty container
             count = 0                        # count reset
         container.append(lug)
+        print container_list
     container_list.append(container)
     container_list.reverse()
     result = [x for c in container_list for x in c]

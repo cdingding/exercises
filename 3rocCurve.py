@@ -36,9 +36,10 @@ def roc_curve(probabilities, labels):
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
+    import numpy as np
 
-    # y1 = [2,2,1,2,1,2,1,2]
-    y1 = [1,1,0,1,0,1,0,1]
+    y1 = [2,2,1,2,1,2,1,2]
+    y1 = list(np.array(y1) - 1)
     scores1 = [0.9,0.8,0.75,0.7,0.5,0.3,0.2,0.1]
     # y2 = [2,2,1,2,1,2,1,1]
     y2 = [1, 1, 0, 1, 0, 1, 0, 0]
@@ -46,9 +47,7 @@ if __name__ == '__main__':
     # y3 = [2,2,1,2,1,1,1,1]
     y3 = [1,1,0,1,0,0,0,0]
     scores3 = [0.9,0.8,0.75,0.7,0.5,0.3,0.2,0.1]
-
     tpr, fpr, thresholds = roc_curve(scores1, y1)
-
     plt.plot(fpr, tpr)
     plt.xlabel("False Positive Rate (1 - Specificity)")
     plt.ylabel("True Positive Rate (Sensitivity, Recall)")
