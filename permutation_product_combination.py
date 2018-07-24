@@ -56,3 +56,25 @@ print list(itertools.combinations('ABCD', 3))
 aa = ["".join(elem) for elem in itertools.permutations('ABCD',3)]
 print len(aa)
 print aa
+
+def replaceq(myStr):
+    from itertools import permutations
+    listBySplit = myStr.split('?')
+    n = len(listBySplit) #n=3
+    #perms = list(permutations('10'))
+    perms = [(x,y) for x in '10' for y in '10']
+    print('perms are:',perms)
+    result = []
+    for perm in perms:
+        oneList = []
+        for m in range(n):
+            oneList.append(listBySplit[m])
+            if m<n-1:
+                oneList.append(perm[m])
+            print('oneList is:',oneList)
+        result.append(''.join(oneList))
+    print('result is: ',result)
+    return result
+
+s= '00?1100?'
+replaceq(s)
