@@ -18,15 +18,12 @@ def luggage_ordering(weights):
     result = [x for c in container_list for x in c]
     return ' '.join([str(x) for x in result])
 
-def luggage_ordering1(weights): # Put together, sort, and optimize
-    limit = 40
+def luggage_ordering1(weights, limit = 40): # Put together, sort, and optimize
     luglist = [int(x) for x in list(weights.split(','))]
     luglist.sort()
     luglist.reverse()
     container_list = []
     container = []
-    currentMax = max(luglist)
-    myset = set()
     for i,lug1 in enumerate(luglist):
         if lug1==limit:
             container_list.append([lug1])
