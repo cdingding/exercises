@@ -65,12 +65,37 @@ def luggage_ordering1(weights, limit = 40): # Put together, sort, and optimize
                 container.append(lug2)
                 luglist.remove(lug2)
                 break
-            if containerWeight+lug2<limit:
-                container.append(lug2)
-                luglist.remove(lug2)
+            container.append(lug2)
+            luglist.remove(lug2)
         container_list.append(container)
         container = []
     container_list = reduce(lambda x,y:x+y,container_list)
+    return container_list
+
+def luggage_ordering2(weights, limit = 40): # Put together, sort, and optimize # with sort reverse need 3 containers
+    luglist = [int(x) for x in list(weights.split(','))]
+    luglist.sort()
+    luglist.reverse()
+    container_list = []
+    container = []
+    for i,lug1 in enumerate(luglist):
+        if lug1==limit:
+            container_list.append([lug1])
+            continue
+        container.append(lug1)
+        for j,lug2 in enumerate(luglist[i+1:]):
+            containerWeight = sum(container)
+            if containerWeight+lug2>limit:
+                continue
+            if containerWeight+lug2 == limit:
+                container.append(lug2)
+                luglist.remove(lug2)
+                break
+            container.append(lug2)
+            luglist.remove(lug2)
+        container_list.append(container)
+        container = []
+    # container_list = reduce(lambda x,y:x+y,container_list)
     return container_list
 
 if __name__ == '__main__':
