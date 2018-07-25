@@ -1,3 +1,4 @@
+
 def luggage_ordering(weights): # Real time, no optimization, BigO(n)
     containerWeight = 40
     lug_list = [int(x) for x in weights.split(',')]
@@ -9,11 +10,11 @@ def luggage_ordering(weights): # Real time, no optimization, BigO(n)
     for lug in lug_list:
         if count+lug <= containerWeight:
             container.append(lug)
-            count = sum(container)
+            count += lug
             continue
         container_list.append(container)
         container = [lug]                   # empty container
-        count = sum(container)              # count reset
+        count = lug             # count reset
     if count>0:
         container_list.append(container)
     print('container list: ',container_list)
@@ -21,7 +22,7 @@ def luggage_ordering(weights): # Real time, no optimization, BigO(n)
     result = [x for c in container_list for x in c] # c must be before x, otherwise c is not defined
     return ' '.join([str(x) for x in result])
 
-# Add 3 luggage limit also with BigO(n)
+# Add 3 luggage limit also
 def luggage_ordering3(weights): # Real time, no optimization, BigO(n)
     containerWeight = 40
     lug_list = [int(x) for x in weights.split(',')]
@@ -33,11 +34,11 @@ def luggage_ordering3(weights): # Real time, no optimization, BigO(n)
     for lug in lug_list:
         if (count+lug <= containerWeight)&(len(container)<3):
             container.append(lug)
-            count = sum(container)
+            count += lug
             continue
         container_list.append(container)
         container = [lug]                   # empty container
-        count = sum(container)              # count reset
+        count = lug            # count reset
     if count>0:
         container_list.append(container)
     print('container list: ',container_list)
@@ -46,10 +47,12 @@ def luggage_ordering3(weights): # Real time, no optimization, BigO(n)
     return ' '.join([str(x) for x in result])
 
 
-def luggage_ordering1(weights, limit = 40): # Put together, sort, and optimize
+
+def luggage_ordering1(weights, limit = 40): # Put together, sort, and optimize # not sort reverse need 4 containers
+    # BigO(n^2)
     luglist = [int(x) for x in list(weights.split(','))]
-    luglist.sort()
-    luglist.reverse()
+    # luglist.sort()
+    # luglist.reverse()
     container_list = []
     container = []
     for i,lug1 in enumerate(luglist):
@@ -69,7 +72,7 @@ def luggage_ordering1(weights, limit = 40): # Put together, sort, and optimize
             luglist.remove(lug2)
         container_list.append(container)
         container = []
-    container_list = reduce(lambda x,y:x+y,container_list)
+    # container_list = reduce(lambda x,y:x+y,container_list)
     return container_list
 
 def luggage_ordering2(weights, limit = 40): # Put together, sort, and optimize # with sort reverse need 3 containers
@@ -98,9 +101,11 @@ def luggage_ordering2(weights, limit = 40): # Put together, sort, and optimize #
     # container_list = reduce(lambda x,y:x+y,container_list)
     return container_list
 
+
+
 if __name__ == '__main__':
     #print luggage_ordering('2,1,1,1,30,5,6,39,40')
-    print luggage_ordering1('2,1,1,1,30,5,6,39,40')
+    print luggage_ordering('2,1,1,1,30,6,39,40')
 
     #Dynamic removing element ahead
     a = [1, 2, 3, 4, 5, 6]
